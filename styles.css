@@ -1,0 +1,273 @@
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #0f172a;
+  color: #f8fafc;
+  line-height: 1.6;
+}
+
+/* Fixed Header & Flexbox Navigation (Tests 1-10, 23, 25) */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #1e293b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+#header-img {
+  height: 36px;
+  width: auto;
+}
+
+.brand-name {
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-size: 1.1rem;
+  color: #38bdf8;
+}
+
+#nav-bar {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #38bdf8;
+}
+
+/* Main Layout Offset for Fixed Header */
+main {
+  padding-top: 80px;
+}
+
+/* Hero & Form Section (Tests 13-22) */
+.hero {
+  text-align: center;
+  padding: 5rem 1.5rem 4rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  color: #94a3b8;
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+}
+
+#form {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+#email {
+  padding: 0.85rem 1.2rem;
+  width: 300px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background-color: #1e293b;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+#email:focus {
+  outline: 2px solid #38bdf8;
+  border-color: transparent;
+}
+
+#submit {
+  padding: 0.85rem 1.75rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #38bdf8;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#submit:hover {
+  background-color: #7dd3fc;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 5%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Features Flexbox */
+.features-grid {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.feature-card {
+  flex: 1;
+  background-color: #1e293b;
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #334155;
+}
+
+.feature-card h3 {
+  color: #38bdf8;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+/* Embedded Video (Tests 11-12) */
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#video {
+  width: 100%;
+  max-width: 720px;
+  height: 405px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Pricing Flexbox */
+.pricing-flex {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.price-card {
+  flex: 1;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.price-card.featured {
+  border-color: #38bdf8;
+  transform: scale(1.03);
+}
+
+.price {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #38bdf8;
+  margin: 1rem 0;
+}
+
+.price-card ul {
+  list-style: none;
+  margin-bottom: 2rem;
+  color: #cbd5e1;
+}
+
+.price-card li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #334155;
+}
+
+.btn {
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #38bdf8;
+  color: #0f172a;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid #1e293b;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+/* Media Query for Mobile Responsiveness (Test 24) */
+@media (max-width: 768px) {
+  #header {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+
+  main {
+    padding-top: 115px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .features-grid,
+  .pricing-flex {
+    flex-direction: column;
+  }
+
+  .price-card.featured {
+    transform: none;
+  }
+
+  #video {
+    height: 240px;
+  }
+}
